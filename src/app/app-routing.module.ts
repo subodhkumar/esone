@@ -1,3 +1,4 @@
+import { RouteThreeComponent } from './route-three/route-three.component';
 import { RouteTwoComponent } from './route-two/route-two.component';
 import { RouteOneComponent } from './route-one/route-one.component';
 import { HomeComponent } from './home/home.component';
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'route2',
     component: RouteTwoComponent
+  },
+  {
+    path: 'route3',
+    component: RouteThreeComponent
   }
 ];
 
