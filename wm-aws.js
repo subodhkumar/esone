@@ -25,14 +25,12 @@ const { getAWSCredentials, deleteObjects, putBucketWebsite, putPublicAccessBlock
   
   
   try {
-    console.log(`${bucket_name} | ${region_name} | ${bundle_path}`)  
     if(!bucket_name || !region_name || !bundle_path){
-      
-      throw `
+        throw `
         Please ensure Follow ENV variables are set
         * S3_BUCKET_NAME /* amazon s3 bucketname */
         * S3_REGION      /* amazon s3 bucket region name */
-        * BUNCLE_PATH    /* localtion of output bundle eg. dist/ */`
+        * BUNDLE_PATH    /* localtion of output bundle eg. dist/ */`
         
     }
     const artefacts_path = path.resolve(`${__dirname}/${bundle_path}`);
@@ -47,6 +45,6 @@ const { getAWSCredentials, deleteObjects, putBucketWebsite, putPublicAccessBlock
     }
   } catch (e) {
     console.log(`ERROR | ${e}`);
-    process.exitCode = 1;  
+    process.exitCode = 1;
   }
 })();
