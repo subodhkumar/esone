@@ -32,6 +32,7 @@ const { getAWSCredentials, deleteObjects, putBucketWebsite, putPublicAccessBlock
         * S3_BUCKET_NAME /* amazon s3 bucketname */
         * S3_REGION      /* amazon s3 bucket region name */
         * BUNCLE_PATH    /* localtion of output bundle eg. dist/ */`
+        process.exitCode = 1;
     }
     const artefacts_path = path.resolve(`${__dirname}/${bundle_path}`);
     const s3 = await getAWSCredentials(region_name);
