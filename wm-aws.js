@@ -27,7 +27,7 @@ const { getAWSCredentials, deleteObjects, putBucketWebsite, putPublicAccessBlock
   try {
     console.log(`${bucket_name} | ${region_name} | ${bundle_path}`)  
     if(!bucket_name || !region_name || !bundle_path){
-      process.exitCode = 1;  
+      
       throw `
         Please ensure Follow ENV variables are set
         * S3_BUCKET_NAME /* amazon s3 bucketname */
@@ -47,5 +47,6 @@ const { getAWSCredentials, deleteObjects, putBucketWebsite, putPublicAccessBlock
     }
   } catch (e) {
     console.log(`ERROR | ${e}`);
+    process.exitCode = 1;  
   }
 })();
